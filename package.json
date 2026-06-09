@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "scripts": {
     "test": "playwright test",
+    "build": "echo 'Build complete: static prototype with no compile step.'",
     "test:headed": "playwright test --headed",
     "test:report": "playwright show-report",
     "install:browsers": "npx playwright install",
