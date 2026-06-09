@@ -1,0 +1,15 @@
+{
+  "name": "shopfloor-resource-allocation",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:report": "playwright show-report",
+    "install:browsers": "npx playwright install",
+    "start:ui": "cd prototype/ui && python3 -m http.server 8000"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0"
+  }
+}

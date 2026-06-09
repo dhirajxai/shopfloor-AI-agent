@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Allocation Board Prototype</title>
+  <link rel="stylesheet" href="styles.css">
+  </head>
+<body>
+  <header class="header">
+    <div class="title">Shop-Floor Resource Allocation — Prototype</div>
+    <div class="kpis">
+      <div class="kpi"><div class="kpi-value" id="kpi-util" data-testid="kpi-util">--%</div><div class="kpi-label">Machine Utilization</div></div>
+      <div class="kpi"><div class="kpi-value" id="kpi-labor" data-testid="kpi-labor">--%</div><div class="kpi-label">Labor Utilization</div></div>
+      <div class="kpi"><div class="kpi-value" id="kpi-throughput" data-testid="kpi-throughput">--</div><div class="kpi-label">Throughput</div></div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar left">
+      <h3>Filters</h3>
+      <label>Search: <input id="filterText" data-testid="filter-text" placeholder="Order ID or title"></label>
+      <label>Priority:
+        <select id="filterPriority" data-testid="filter-priority">
+          <option value="">All</option>
+          <option>High</option>
+          <option>Medium</option>
+          <option>Low</option>
+        </select>
+      </label>
+      <h4>Operators</h4>
+      <ul id="operatorsList" data-testid="operators-list" class="compact-list"></ul>
+    </aside>
+
+    <main class="board" id="board" data-testid="allocation-board">
+      <!-- lanes rendered by script.js -->
+    </main>
+
+    <aside class="sidebar right">
+      <h3>Audit Log</h3>
+      <ul id="auditLog" class="audit-list"></ul>
+    </aside>
+  </div>
+
+  <!-- modal -->
+  <div id="modal" class="modal hidden" role="dialog" aria-hidden="true" data-testid="workorder-modal">
+    <div class="modal-inner">
+      <button id="modalClose" class="close" data-testid="modal-close">×</button>
+      <h3 id="modalTitle">Work Order</h3>
+      <div id="modalBody" data-testid="modal-body"></div>
+      <div class="modal-actions">
+        <button id="modalSave" data-testid="modal-save">Save</button>
+        <button id="modalCancel" data-testid="modal-cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
